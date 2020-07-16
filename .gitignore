@@ -8,7 +8,7 @@ node_modules
 vue.config.js
 .gitignore
 
-# Log files
+# Log filesgt
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
