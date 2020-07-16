@@ -15,12 +15,15 @@ export default {
   data: function() {
     return {
       image: zeleft,
-      x: 20,
+      x: 50,
     }
   },
   methods: {
+    faceCoordinate: function(n) {
+      this.image = n < this.x ? zeleft : zeright
+    },
     moveTo: function(n, faceleft) {
-      this.image = n < this.x ? zewalksleft : n > this.x ? zewalksright : this.image;
+      this.image = n < this.x ? zewalksleft : n > this.x ? zewalksright : this.image
       let self = this
       self.x = n
       setTimeout(function() {

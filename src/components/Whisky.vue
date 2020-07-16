@@ -1,7 +1,7 @@
 <template>
   <div>
     <img class="interactive" :src="image" />
-    <div class="whisky tag" @click="water"></div>
+    <div class="whisky tag" v-if="wWhiskyClickable" @click="water"></div>
   </div>
 </template>
 <script>
@@ -14,6 +14,9 @@ export default {
     return {
       image: whisky,
     }
+  },
+  props: {
+    wWhiskyClickable: Boolean
   },
   methods: {
     water: function() {

@@ -18,7 +18,8 @@ export default {
   },
   methods: {
     die: function() {
-      this.image = dies
+      this.image = dies;
+      this.$emit('plantDied')
     },
     live: function() {
       let self = this

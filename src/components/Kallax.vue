@@ -1,32 +1,29 @@
 <template>
   <div>
-    <img :src="image" />
-    <div class="tag bikini" @mouseenter="flatter" @mouseleave="unflatter" @click="clicked"></div>
+    <img :src="image" v-if="show" />
+    <div class="tag kallax"  @click="findPresent"></div>
   </div>
 </template>
 <script>
-import bikini from '../assets/images/bikini.png'
-import windbikini from '../assets/images/windbikini.png'
+import kallax from '../assets/images/presikallax.png'
 
 export default {
   name: 'Kallax',
   data: function() {
     return {
-      image: bikini,
-      windbikini: windbikini,
-      bikini: bikini,
+      image: kallax,
+      show: false
     }
   },
   methods: {
-    clicked: function() {
-      this.$emit('clicked')
-    },
-    flatter: function() {
-      this.image = this.windbikini
-    },
-    unflatter: function() {
-      this.image = this.bikini
-    },
+    findPresent: function() 
+    {
+      if (!this.show) {
+        this.$emit("found")
+      }
+      this.show = true;
+      
+    }
   },
 }
 </script>
@@ -38,10 +35,10 @@ img {
   left: 0;
   z-index: 0;
 }
-.bikini {
-  width: 4vw;
-  top: 19vw;
-  left: 26vw;
+.kallax {
+  width: 5vw;
+  top: 34vw;
+  left: 74vw;
   height: 6vw;
 }
 </style>
