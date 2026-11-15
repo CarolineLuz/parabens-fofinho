@@ -8,8 +8,8 @@
     <WOW v-if="!showLetter"/>
     <Chair @chairdance="findLighter" v-if="!showLetter"/>
     <Ze ref="ze"/>
-    <img :src="require('../assets/images/table.png')" />
-    <img :src="require('../assets/images/sofa.png')" />
+    <img :src="tableImg" />
+    <img :src="sofaImg" />
     <Caro @talking="comeToTalk" @readLetter="readLetter" :allPresentsFound="allFound"/>
     <Lamps />
     <Ciggies @found="getHappyAboutCiggies" />
@@ -20,20 +20,22 @@
 </template>
 
 <script>
-import Bikini from './Bikini'
-import Chair from './Chair'
-import Kallax from './Kallax'
-import Booster from './Booster'
-import Plant from './Plant'
-import WOW from './WOW'
-import Lamps from './Lamps'
-import Caro from './Caro'
-import Ze from './Ze'
-import Babyoil from './Babyoil'
-import Ciggies from './Ciggies'
-import Background from './Background'
-import Letter from './Letter'
-import Whisky from './Whisky'
+import tableImg from '../assets/images/table.png'
+import sofaImg from '../assets/images/sofa.png'
+import Bikini from './Bikini.vue'
+import Chair from './Chair.vue'
+import Kallax from './Kallax.vue'
+import Booster from './Booster.vue'
+import Plant from './Plant.vue'
+import WOW from './WOW.vue'
+import Lamps from './Lamps.vue'
+import Caro from './Caro.vue'
+import Ze from './Ze.vue'
+import Babyoil from './Babyoil.vue'
+import Ciggies from './Ciggies.vue'
+import Background from './Background.vue'
+import Letter from './Letter.vue'
+import Whisky from './Whisky.vue'
 
 export default {
   name: 'Screen',
@@ -48,7 +50,9 @@ export default {
       presiFound: false,
       ciggiesFound: false,
       showLetter: false,
-      wWhiskyClickable: false
+      wWhiskyClickable: false,
+      tableImg,
+      sofaImg
     }
   },
   computed: {
